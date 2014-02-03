@@ -1,0 +1,23 @@
+{
+  "name": "awujo",
+  "private": true,
+  "dependencies": {
+    "d3": "~3.4.1",
+    "bootstrap": "~3.1.0",
+    "datamaps": "~0.2.2"
+  },
+  "version": "0.0.1",
+  "authors": [
+    "Qiao Han <sweatybridge@gmail.com>"
+  ],
+  "description": "social network visualiser",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ]
+}
