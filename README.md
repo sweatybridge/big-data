@@ -1,7 +1,24 @@
-Create the Webpages in this git repository.
+Setup Guide
+===
+1. install [home brew](http://brew.sh)
+        ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+2. install [nodejs](http://nodejs.org)
+        brew install node
+3. install [yeoman](http://yeoman.io/)
+        npm install -g yo
+4. clone this repo
+        git clone https://gitlab.doc.ic.ac.uk/lab1314_spring/topics_13.git
+5. change to your `topics_13` directory and run
+        grunt serve
 
-1.Accessing it from the Web:
+Deployment
+===
+1. Compile the website source code
+        grunt
+2. Upload the entire `dist` folder to our `project directory`
 
+Project Directory
+===
 Your entire group project directory is accessible via the web as the URL:
 
         http://www.doc.ic.ac.uk/project/2013/163/g13163xx/
@@ -23,4 +40,3 @@ For more information about the DoC web server, CGI scripts etc,
 please see the CSG web guides found at:
 
        http://www.doc.ic.ac.uk/csg/guides/web/
-
