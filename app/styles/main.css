@@ -12,35 +12,8 @@
     height: 100%;
 }
 
-/* d3 styles */
-svg {
-    font: 10px sans-serif;
-}
-
-canvas, svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-#chart {
-    position: relative;
-}
-
-.brush .extent {
-    fill-opacity: .3;
-    stroke: #fff;
-    shape-rendering: crispEdges;
-}
-
-.axis line, .axis path {
-    fill: none;
-    stroke: #000;
-    shape-rendering: crispEdges;
-}
-
-.axis text {
-    text-shadow: 0 1px 0 #fff;
+iframe, object, embed {
+  max-width: 100%;
 }
 
 /* cover template styles */
