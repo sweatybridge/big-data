@@ -18,7 +18,13 @@ Setup Guide
 
 5. change to your `topics_13` directory and run
 
+        npm install
+        bower install
         grunt serve
+
+6. if `grunt serve` throws an error, install compass
+
+        sudo gem install compass
 
 Deployment
 ===
