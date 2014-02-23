@@ -12,20 +12,26 @@ Setup Guide
 
         npm install -g yo
 
-4. clone this repo
+4. install [compass](http://compass-style.org/)
+
+        sudo gem install sass compass
+
+5. clone this repo
 
         git clone https://gitlab.doc.ic.ac.uk/lab1314_spring/topics_13.git
 
-5. change to your `topics_13` directory and run
+6. change to your `topics_13` directory
+
+		cd topics_13
+
+7. install project dependencies
 
         npm install
         bower install
-        grunt serve
 
-6. if `grunt serve` throws an error, install compass
+8. run the development server locally
 
-        sudo gem install sass
-        sudo gem install compass
+		grunt serve
 
 Deployment
 ===
