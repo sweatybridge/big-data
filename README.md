@@ -24,6 +24,7 @@ Setup Guide
 
 6. if `grunt serve` throws an error, install compass
 
+        sudo gem install sass
         sudo gem install compass
 
 Deployment
