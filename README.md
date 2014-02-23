@@ -44,7 +44,7 @@ Your entire group project directory is accessible via the web as the URL:
 Note: we usually recommend that you put web pages in a subdirectory
 of your project directory, for example
 
-/vol/project/2013/163/g13163xx/web/
+		/vol/project/2013/163/g13163xx/web/
 
 in which case the above URL would become:
 
