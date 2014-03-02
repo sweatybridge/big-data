@@ -15,10 +15,8 @@ function redrawDotNav(){
     // The top of each section is offset by half the distance to the previous section.
     var section2Top =  $('#about').offset().top - half;
     var section3Top =  $('#features').offset().top - half;
-    var section4Top =  $('#demo1').offset().top - half;
-    var section5Top =  $('#demo2').offset().top - half;
-    var section6Top =  $('#demo3').offset().top - half;
-    var section7Top =  $('#conclusion').offset().top - half;
+    var section4Top =  $('#demo').offset().top - half;
+    var section5Top =  $('#conclusion').offset().top - half;
     $('nav#primary a').removeClass('active');
     if($(document).scrollTop() >= section1Top && $(document).scrollTop() < section2Top){
         $('nav#primary a.home').addClass('active');
@@ -27,12 +25,8 @@ function redrawDotNav(){
     } else if ($(document).scrollTop() >= section3Top && $(document).scrollTop() < section4Top){
         $('nav#primary a.features').addClass('active');
     } else if ($(document).scrollTop() >= section4Top && $(document).scrollTop() < section5Top){
-        $('nav#primary a.demo1').addClass('active');
-    } else if ($(document).scrollTop() >= section5Top && $(document).scrollTop() < section6Top){
-        $('nav#primary a.demo2').addClass('active');
-    } else if ($(document).scrollTop() >= section6Top && $(document).scrollTop() < section7Top){
-        $('nav#primary a.demo3').addClass('active');
-    } else if ($(document).scrollTop() >= section7Top){
+        $('nav#primary a.demo').addClass('active');
+    } else if ($(document).scrollTop() >= section5Top){
         $('nav#primary a.conclusion').addClass('active');
     }
 }
