@@ -71,30 +71,23 @@ var map = new Datamap({
     }
 });
 
-map.arc([{
-    origin: {
-        latitude: 40.639722,
-        longitude: -73.778889
-    },
-    destination: {
-        latitude: 37.618889,
-        longitude: -122.375
-    }
-}], {
-    strokeWidth: 1,
-    arcSharpness: 1.4
-});
-
 function highlight() {
     console.log('highlight');
-    var ps = d3.selectAll('.datamaps-subunit')[0];
-    var i = Math.round(Math.random() * ps.length);
-    d3.select(ps[i])
+    // var ps = d3.selectAll('.datamaps-subunit')[0];
+    var i = Math.floor(Math.random() * wbc.length);
+    var j = Math.floor(Math.random() * wbc.length);
+    var c = wbc[i];
+    d3.select('.datamaps-subunit.' + c.id)
     .style('fill', '#646464')
     .transition()
     .duration(5000)
     .style('fill', '#3c323c')
     .style('opacity', 0.6);
+
+    var pos = map.projection([c.longitude, c.latitude]);
+    var pos2 = map.projection([wbc[j].longitude, wbc[j].latitude]);
+    fireworks.push( new Firework( pos[0], pos[1], cw / 2, ch ) );
+    fireworks.push( new Firework( pos[0], pos[1], pos2[0], pos2[1] ) );
 }
 
 (function loop() {
