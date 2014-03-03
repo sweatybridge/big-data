@@ -12,8 +12,148 @@
     height: 100%;
 }
 
+/* modal */
+.modal-title, .modal-body {
+  color: black;
+}
+
 iframe, object, embed {
   max-width: 100%;
+}
+
+/* Nav */
+ol, ul {
+  list-style: none;
+}
+
+nav#primary {
+  z-index: 5;
+  position: fixed;
+  top: 50%;
+  right: 16px;
+  margin-top: -40px;
+}
+nav#primary li {
+  position: relative;
+  height: 20px;
+}
+nav#primary a {
+  display: block;
+  width: 20px;
+  height: 20px;
+  text-indent: -9999px;
+  background: transparent url('../images/nav-dot.png') 4px 4px no-repeat;
+}
+nav#primary a:hover, nav#primary a.active {
+  background: transparent url('../images/nav-dot.png') 4px -16px no-repeat;
+}
+nav#primary h1 {
+  position: absolute;
+  right: 22px;
+  top: -7px;
+  display: none;
+  padding: 4px 20px 4px 7px;
+  color: #fff;
+  white-space: nowrap;
+  background: transparent url('../images/nav-arrow.png') 100% 50% no-repeat;
+  margin: 0;
+  font: inherit;
+}
+
+/* foreground (ballons/landscape) */
+#parallax-bg3 {
+  z-index: -1;
+  position: fixed;
+  left: 50%; /* align left edge with center of viewport */
+  top: 0;
+  width: 940px;
+  margin-left: -470px; /* move left by half element's width */
+}
+/* balloon */
+#bg3-1 {
+  position: absolute;
+  top: -111px;
+  left: 355px;
+}
+#bg3-2 {
+  position: absolute;
+  top: 812px;
+  left: 321px;
+}
+#bg3-3 {
+  position: absolute;
+  top: 1628px;
+  left: 403px;
+}
+#bg3-4 {
+  position: absolute;
+  top: 2700px;
+  left: -85px;
+}
+
+/* midground (clouds) */
+#parallax-bg2 {
+  z-index: -2;
+  position: fixed;
+  left: 50%; /* align left edge with center of viewport */
+  top: 0;
+  width: 1200px;
+  margin-left: -600px; /* move left by half element's width */
+}
+#bg2-1 {
+  position: absolute;
+  top: 162px;
+  left: 200px;
+}
+#bg2-2 {
+  position: absolute;
+  top: 300px;
+  left: 1150px;
+}
+#bg2-3 {
+  position: absolute;
+  top: 543px;
+  left: -35px;
+}
+#bg2-4 {
+  position: absolute;
+  top: 1180px;
+  left: 250px;
+}
+#bg2-5 {
+  position: absolute;
+  top: 900px;
+  left: 890px;
+}
+
+/* background (clouds) */
+#parallax-bg1 {
+  z-index: -3;
+  position: fixed;
+  left: 50%; /* align left edge with center of viewport */
+  top: 0;
+  width: 1200px;
+  margin-left: -600px; /* move left by half element's width */
+}
+#bg1-1 {
+  position: absolute;
+  top: 85px;
+  left: -270px;
+}
+#bg1-2 {
+  position: absolute;
+  top: 440px;
+  left: 795px;
+}
+#bg1-3 {
+  position: absolute;
+  top: 900px;
+  left: -220px;
+}
+#bg1-4 {
+  position: absolute;
+  top: 1020px;
+  left: 450px;
 }
 
 /* cover template styles */
@@ -63,7 +203,7 @@ body {
   min-height: 100%;
 }
 .site-wrapper-inner {
-    position: relative;
+  position: relative;
   display: table-cell;
   vertical-align: top;
 }
@@ -146,91 +286,6 @@ body {
   width: 100%;
 }
 
-
-/*
- * Affix and center
- */
-
-@media (min-width: 768px) {
-  /* Pull out the header and footer */
-  .masthead {
-    position: absolute;
-    top: 0;
-  }
-  /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
-  /* Handle the widths */
-  .masthead,
-  .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
-  }
-}
-
-@media (min-width: 992px) {
-  .masthead,
-  .cover-container {
-    width: 700px;
-  }
-}
-
-/* carousel styles */
-#about {
-  padding-top: 60px;
-}
-
-/* CUSTOMIZE THE NAVBAR
--------------------------------------------------- */
-
-/* Special class on .container surrounding .navbar, used for positioning it into place. */
-.navbar-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 20;
-}
-
-/* Flip around the padding for proper display in narrow viewports */
-.navbar-wrapper .container {
-  padding-left: 0;
-  padding-right: 0;
-}
-.navbar-wrapper .navbar {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
-
-/* Carousel base class */
-.carousel {
-  height: 500px;
-  margin-bottom: 60px;
-}
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  z-index: 10;
-}
-
-/* Declare heights because of positioning of img element */
-.carousel .item {
-  height: 500px;
-  background-color: #777;
-}
-.carousel-inner > .item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 500px;
-}
-
-
-
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
@@ -253,6 +308,16 @@ body {
   margin-right: 10px;
 }
 
+.marketing .col-lg-6 {
+  text-align: center;
+  margin-top: -30px;
+  margin-bottom: 60px;
+}
+/*
+.marketing .col-lg-6 img {
+  box-shadow: 0px 0px 30px #ffff00;
+}
+*/
 
 /* Featurettes
 ------------------------- */
@@ -269,50 +334,40 @@ body {
 }
 
 
-
-/* RESPONSIVE CSS
--------------------------------------------------- */
+/*
+ * Affix and center
+ */
 
 @media (min-width: 768px) {
-
+  /* Pull out the header and footer */
+  .masthead {
+    position: absolute;
+    top: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
   /* Remove the edge padding needed for mobile */
   .marketing {
     padding-left: 0;
     padding-right: 0;
   }
-
-  /* Navbar positioning foo */
-  .navbar-wrapper {
-    margin-top: 20px;
-  }
-  .navbar-wrapper .container {
-    padding-left:  15px;
-    padding-right: 15px;
-  }
-  .navbar-wrapper .navbar {
-    padding-left:  0;
-    padding-right: 0;
-  }
-
-  /* The navbar becomes detached from the top, so we round the corners */
-  .navbar-wrapper .navbar {
-    border-radius: 4px;
-  }
-
-  /* Bump up size of carousel content */
-  .carousel-caption p {
-    margin-bottom: 20px;
-    font-size: 21px;
-    line-height: 1.4;
-  }
-
   .featurette-heading {
     font-size: 50px;
   }
-
 }
 
 @media (min-width: 992px) {
+  .masthead,
+  .cover-container {
+    width: 700px;
+  }
   .featurette-heading {
     margin-top: 120px;
   }

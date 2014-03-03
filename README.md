@@ -12,13 +12,26 @@ Setup Guide
 
         npm install -g yo
 
-4. clone this repo
+4. install [compass](http://compass-style.org/)
+
+        sudo gem install sass compass
+
+5. clone this repo
 
         git clone https://gitlab.doc.ic.ac.uk/lab1314_spring/topics_13.git
 
-5. change to your `topics_13` directory and run
+6. change to your `topics_13` directory
 
-        grunt serve
+		cd topics_13
+
+7. install project dependencies
+
+        npm install
+        bower install
+
+8. run the development server locally
+
+		grunt serve
 
 Deployment
 ===
@@ -37,7 +50,7 @@ Your entire group project directory is accessible via the web as the URL:
 Note: we usually recommend that you put web pages in a subdirectory
 of your project directory, for example
 
-/vol/project/2013/163/g13163xx/web/
+		/vol/project/2013/163/g13163xx/web/
 
 in which case the above URL would become:
 

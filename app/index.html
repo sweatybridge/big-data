@@ -24,18 +24,39 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <nav id="primary">
+        <ul>
+            <li>
+                <h1>Home</h1>
+                <a class="home" href="#home">View</a>
+            </li>
+            <li>
+                <h1>About</h1>
+                <a class="about" href="#about">View</a>
+            </li>
+            <li>
+                <h1>Features</h1>
+                <a class="features" href="#features">View</a>
+            </li>
+            <li>
+                <h1>Demo</h1>
+                <a class="demo" href="#demo">View</a>
+            </li>
+            <li>
+                <h1>Conclusion</h1>
+                <a class="conclusion" href="#conclusion">View</a>
+            </li>
+        </ul>
+    </nav>
+
     <div class="site-wrapper" id="home">
+        <canvas id="canvas" style="position: absolute;"></canvas>
         <div id="map"></div>
         <div class="site-wrapper-inner">
             <div class="cover-container">
                 <div class="masthead clearfix">
                     <div class="inner">
-                        <h1 class="masthead-brand">Awujo</h1>
-                        <ul class="nav masthead-nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#demo">Demo</a></li>
-                        </ul>
+                        <h3 class="masthead-brand">Awujo</h3>
                     </div>
                 </div>
                 <div class="inner cover">
@@ -52,37 +73,70 @@
     <div class="container marketing" id="about">
     <!-- Three columns of text below the cover -->
         <div class="row">
+            <div class="col-lg-6 col-lg-offset-3">
+                <img class="img-circle" src="images/round.png" style="width: 256px; height: 256px;">
+            </div>
+        </div>
+        <div class="row">
             <div class="col-lg-4">
                 <img class="img-circle" src="images/Volume.jpg" width="170" height="170">
                 <h2>Volume</h2>
                 <p>How do you store and query billions of records quickly and efficiently?</p>
-                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+                <p><a class="btn btn-success" role="button" data-toggle="modal" data-target="#myModal">View Solutions »</a></p>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Volume</h4>
+                      </div>
+                      <div class="modal-body">
+                        <h4>MongoDB</h4>
+                        <p>lalala</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
                 <img class="img-circle" src="images/Velocity.jpg" width= "170" height= "170">
                 <h2>Velocity</h2>
                 <p>5 exabytes of data are generated every two days. Can your server choose the appropriate load balancing strategy?</p>
-                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+                <p><a class="btn btn-success" role="button" data-toggle="modal" data-target="#myModal">View Solutions »</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
                 <img class="img-circle" src="images/Variety4.jpg" width = "170" height= "170">
                 <h2>Variety</h2>
                 <p>Time, text, location... What database schema should you use?</p>
-                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+                <p><a class="btn btn-success" role="button" data-toggle="modal" data-target="#myModal">View Solutions »</a></p>
             </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
 
-    <!-- START THE FEATURETTES -->
+        <hr class="featurette-divider" id="features">
+
+        <div>
+            <h1 class="cover-heading">What can you do with Big Data</h1>
+            <p>The main challenge of big data analytics is to find the right data to present.</p>
+            <p>Because of the sheer volume and variety of the information available, it is very difficult to know where interesting data lie and how that data is related to other data sources.</p>
+            <p>Visual query languages help data scientists formulate the right question and hence narrow down on the right data.</p>
+            <p>The idea is to use pre-generated database statistics to build an exploratory graph that allows users to visually navigate complex datasets.</p>
+        </div>
+
+        <!-- START THE FEATURETTES -->
 
         <hr class="featurette-divider" id="demo">
 
         <div class="row featurette">
             <div class="col-md-7">
                 <h2 class="featurette-heading">Declutter Information. <span class="text-muted">It'll blow your mind.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                <p class="lead">The relative size of each node, together with its connections with other nodes, will serve as indicators of interesting segments within the datasets. As the user expands deeper into the each node, pig queries are composed on the fly and new visualisations are created in real time as results arrive.</p>
             </div>
             <div class="col-md-5">
-                <iframe width="500" height="500" src="http://jsfiddle.net/uPzTu/8/embedded/result,js,resources,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+                <iframe width="500" height="500" src="http://jsfiddle.net/uPzTu/10/embedded/result,js,resources,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
             </div>
         </div>
 
@@ -90,10 +144,10 @@
 
         <div class="row featurette">
             <div class="col-md-5">
-                <iframe width="500" height="500" src="http://jsfiddle.net/9uk28/5/embedded/result,js,resources,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+                <iframe width="500" height="500" src="http://jsfiddle.net/9uk28/6/embedded/result,js,resources,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
             </div>
             <div class="col-md-7">
-                <h2 class="featurette-heading">Heat Map. <span class="text-muted">See for yourself.</span></h2>
+                <h2 class="featurette-heading">Size Viewer. <span class="text-muted">See for yourself.</span></h2>
                 <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
             </div>
         </div>
@@ -102,17 +156,42 @@
 
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">Time Series. <span class="text-muted">Checkmate.</span></h2>
+                <h2 class="featurette-heading">Parallel Coordinates. <span class="text-muted">Checkmate.</span></h2>
                 <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
             </div>
             <div class="col-md-5">
-                <iframe width="500" height="500" src="http://jsfiddle.net/LG8ZV/1/embedded/result,js,resources,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+                <iframe width="500" height="500" src="http://jsfiddle.net/LG8ZV/2/embedded/result,js,resources,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
             </div>
         </div>
 
-        <hr class="featurette-divider">
+        <hr class="featurette-divider" id="conclusion">
 
         <!-- /END THE FEATURETTES -->
+
+        <div>
+            <h1>Conclusion</h1>
+            <p>Developing a nervous system for the Earth.</p>
+            <p>Sign up.</p>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Parallax  midground clouds -->
+        <div id="parallax-bg2">
+            <img id="bg2-1" src="images/cloud-lg1.png" alt="cloud"/>
+            <img id="bg2-2" src="images/cloud-lg1.png" alt="cloud"/>
+            <img id="bg2-3" src="images/cloud-lg1.png" alt="cloud"/>
+            <img id="bg2-4" src="images/cloud-lg1.png" alt="cloud"/>
+            <img id="bg2-5" src="images/cloud-lg1.png" alt="cloud"/>
+        </div>
+        
+        <!-- Parallax  foreground clouds -->
+        <div id="parallax-bg3">
+            <img id="bg3-1" src="images/cloud-lg2.png" alt="cloud"/>
+            <img id="bg3-2" src="images/cloud-lg2.png" alt="cloud"/>
+            <img id="bg3-3" src="images/cloud-lg2.png" alt="cloud"/>
+            <img id="bg3-4" src="images/cloud-lg2.png" alt="cloud"/>
+        </div>
 
         <!-- FOOTER -->
         <footer>
@@ -135,16 +214,19 @@
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
-        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-        e.src='//www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-        ga('create','UA-XXXXX-X');ga('send','pageview');
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-48559130-1', 'ic.ac.uk');
+        ga('send', 'pageview');
     </script>
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
+    <script src="scripts/wbc.js"></script>
+    <script src="scripts/firework.js"></script>
     <!-- endbuild -->
 </body>
 </html>
