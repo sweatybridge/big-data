@@ -1,6 +1,7 @@
 #!/bin/sh
+# only works if you have setup ssh key authentication
 
-# replace with your own username
+# replace with your username
 UN=qh812
 
 WEB=dist
