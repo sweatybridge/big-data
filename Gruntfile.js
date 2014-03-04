@@ -295,6 +295,7 @@ module.exports = function (grunt) {
         copy: {
             dist: {
                 files: [{
+                    mode: 664,
                     expand: true,
                     dot: true,
                     cwd: '<%= yeoman.app %>',
