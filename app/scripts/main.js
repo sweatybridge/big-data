@@ -71,6 +71,8 @@ var map = new Datamap({
     }
 });
 
+var wbc;
+
 function highlight() {
     console.log('highlight');
     // var ps = d3.selectAll('.datamaps-subunit')[0];
@@ -90,10 +92,15 @@ function highlight() {
     fireworks.push( new Firework( pos[0], pos[1], pos2[0], pos2[1] ) );
 }
 
-(function loop() {
+function wbcloop() {
     var rand = Math.round(Math.random() * 500) + 100;
     setTimeout(function() {
         highlight();
-        loop();
+        wbcloop();
     }, rand);
-}());
+}
+
+$.getJSON('wbc.json', function (json) {
+    wbc = json;
+    wbcloop();
+});
