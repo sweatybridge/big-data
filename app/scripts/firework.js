@@ -191,7 +191,7 @@ function loop() {
 	window.requestAnimFrame( loop );
 	
 	// increase the hue to get different colored fireworks over time
-	hue += 0.5;
+	//hue += 0.5;
 	
 	// normally, clearRect() would be used to clear the canvas
 	// we want to create a trailing effect though

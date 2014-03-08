@@ -61,7 +61,7 @@ $(document).ready(function() {
 var map = new Datamap({
     element: document.getElementById('map'),
     fills: {
-        defaultFill: 'rgba(120, 90, 70, 0.8)',
+        defaultFill: 'rgba(232, 172, 137, 0.8)',
     },
     geographyConfig: {
         borderColor: 'rgba(100, 100, 100, 0.6)',
