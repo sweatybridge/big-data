@@ -65,7 +65,7 @@ var map = new Datamap({
     },
     geographyConfig: {
         borderColor: 'rgba(100, 100, 100, 0.6)',
-        highlightFillColor: 'rgba(60, 50, 60, 0.8)',
+        highlightFillColor: 'rgba(246, 157, 30, 0.5)',
         highlightBorderColor: 'rgba(100, 100, 100, 0.8)',
         popupOnHover: false
     }
@@ -80,7 +80,7 @@ function highlight() {
     var j = Math.floor(Math.random() * wbc.length);
     var c = wbc[i];
     d3.select('.datamaps-subunit.' + c.id)
-    .style('fill', '#646464')
+    .style('fill', '#F6A71E')
     .transition()
     .duration(5000)
     .style('fill', '#3c323c')
