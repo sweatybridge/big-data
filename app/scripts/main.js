@@ -86,7 +86,6 @@ function highlight() {
     console.log('highlight');
     // var ps = d3.selectAll('.datamaps-subunit')[0];
     var i = Math.floor(Math.random() * wbc.length);
-    var j = Math.floor(Math.random() * wbc.length);
     var c = wbc[i];
     d3.select('.datamaps-subunit.' + c.id)
     .style('fill', '#F6A71E')
@@ -95,9 +94,18 @@ function highlight() {
     .style('fill', '#e8ac89')
     .style('opacity', 0.8);
 
+    var j = Math.floor(Math.random() * wbc.length);
+    var d = wbc[j];
+    d3.select('.datamaps-subunit.' + d.id)
+    .style('fill', '#F6A71E')
+    .transition()
+    .duration(5000)
+    .style('fill', '#e8ac89')
+    .style('opacity', 0.8);
+
     var pos = map.projection([c.longitude, c.latitude]);
     var pos2 = map.projection([wbc[j].longitude, wbc[j].latitude]);
-    fireworks.push( new Firework( pos[0], pos[1], cw / 2, ch ) );
+    fireworks.push( new Firework( pos2[0], pos2[1], pos[0], pos[1] ) );
     fireworks.push( new Firework( pos[0], pos[1], pos2[0], pos2[1] ) );
 }
 

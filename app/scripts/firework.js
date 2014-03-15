@@ -65,7 +65,7 @@ function Firework( sx, sy, tx, ty ) {
 	}
 	this.angle = Math.atan2( ty - sy, tx - sx );
 	this.speed = 2;
-	this.acceleration = 1.05;
+	this.acceleration = 1.03;
 	this.brightness = random( 50, 70 );
 	// circle target indicator radius
 	this.targetRadius = 1;
@@ -191,7 +191,7 @@ function loop() {
 	window.requestAnimFrame( loop );
 	
 	// increase the hue to get different colored fireworks over time
-	//hue += 0.5;
+	hue += 0.5;
 	
 	// normally, clearRect() would be used to clear the canvas
 	// we want to create a trailing effect though
