@@ -83,8 +83,8 @@ function highlight() {
     .style('fill', '#F6A71E')
     .transition()
     .duration(5000)
-    .style('fill', '#3c323c')
-    .style('opacity', 0.6);
+    .style('fill', '#e8ac89')
+    .style('opacity', 0.8);
 
     var pos = map.projection([c.longitude, c.latitude]);
     var pos2 = map.projection([wbc[j].longitude, wbc[j].latitude]);
