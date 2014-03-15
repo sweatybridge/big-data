@@ -47,7 +47,16 @@ $(document).ready(function() {
     });
 
     // smooth scrolling
-    $('a').click(function() {
+    $('nav a').click(function() {
+        $('html, body').animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top
+        }, 500, function() {
+            parallaxScroll(); // Callback is required for iOS
+        });
+        return false;
+    });
+
+    $('a.btn').click(function() {
         $('html, body').animate({
             scrollTop: $( $.attr(this, 'href') ).offset().top
         }, 500, function() {
