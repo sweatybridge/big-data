@@ -64,6 +64,13 @@ $(document).ready(function() {
         });
         return false;
     });
+
+    // attach pig audio control
+    $('#pigControl').click(function() {
+        $('#pigAudio')[0].play();
+        $('#pigModal').modal('toggle');
+        return false;
+    });
 });
 
 // data maps
