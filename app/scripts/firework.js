@@ -58,17 +58,17 @@ function Firework( sx, sy, tx, ty ) {
 	this.distanceTraveled = 0;
 	// track the past coordinates of each firework to create a trail effect, increase the coordinate count to create more prominent trails
 	this.coordinates = [];
-	this.coordinateCount = 3;
+	this.coordinateCount = 20;
 	// populate initial coordinate collection with the current coordinates
 	while( this.coordinateCount-- ) {
 		this.coordinates.push( [ this.x, this.y ] );
 	}
 	this.angle = Math.atan2( ty - sy, tx - sx );
-	this.speed = 2;
-	this.acceleration = 1.03;
+	this.speed = 10;
+	this.acceleration = 1;
 	this.brightness = random( 50, 70 );
 	// circle target indicator radius
-	this.targetRadius = 1;
+	this.targetRadius = 5;
 }
 
 // update firework
