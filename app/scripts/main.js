@@ -47,7 +47,7 @@ $(document).ready(function() {
     });
 
     // smooth scrolling
-    $('a:not(.carousel-control)').click(function() {
+    $('a:not(.carousel-control, #pigControl)').click(function() {
         $('html, body').animate({
             scrollTop: $( $.attr(this, 'href') ).offset().top
         }, 500, function() {
