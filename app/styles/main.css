@@ -13,8 +13,12 @@
 }
 
 /* modal */
-.modal-title, .modal-body {
+.modal-title {
   color: black;
+}
+.modal-body {
+  color: black;
+  text-align: left;
 }
 
 iframe, object, embed {
@@ -22,7 +26,7 @@ iframe, object, embed {
 }
 
 /* Nav */
-ol, ul {
+ul {
   list-style: none;
 }
 
@@ -165,10 +169,6 @@ nav#primary h1 {
 a,
 a:focus,
 a:hover {
-  color: #000;
-}
-
-.carousel-visualisation h3 {
   color: #000;
 }
 
