@@ -187,7 +187,36 @@
                   </div>
                   <div class="modal-body">
                     <h4>MapReduce</h4>
-                    <p>Oink oink!</p>
+                    <p style="text-align: left;">MapReduce is a programming model and an associated implementation for processing and generating large data sets. Users specify a map function that processes a key/value pair to generate a set of intermediate key/value pairs, and a reduce function that merges all intermediate values associated with the same intermediate key. Many real world tasks are expressible in this model.</p>
+<p style="text-align: left;">Programs written in this functional style are automatically parallelized and executed on a large cluster of commodity machines. The run-time system takes care of the details of partitioning the input data, scheduling the program's execution across a set of machines, handling machine failures, and managing the required inter-machine communication. This allows programmers without any experience with parallel and distributed systems to easily utilize the resources of a large distributed system.</p>
+<p style="text-align: left;">"Map" step: The master node takes the input, divides it into smaller sub-problems, and distributes them to worker nodes. A worker node may do this again in turn, leading to a multi-level tree structure. The worker node processes the smaller problem, and passes the answer back to its master node.</p>
+
+<p style="text-align: left;">"Reduce" step: The master node then collects the answers to all the sub-problems and combines them in some way to form the output – the answer to the problem it was originally trying to solve.</p>
+<h4 style="text-align: left;">Uses</h4>
+<p style="text-align: left;">MapReduce is useful in a wide range of applications. For example, at Google, MapReduce was used to completely regenerate Google's index of the World Wide Web. It replaced the old ad hoc programs that updated the index and ran the various analyses.</p>
+<h4 style="text-align: left;">Criticism</h4>
+<h5 style="text-align: left;">Restricted programming framework</h5>
+<p style="text-align: left;">MapReduce tasks must be written as acyclic dataflow programs, i.e. a stateless mapper followed by a stateless reducer, that are executed by a batch job scheduler. This paradigm makes repeated querying of datasets difficult and imposes limitations that are felt in fields such as machine learning, where iterative algorithms that revisit a single working setmultiple times are the norm.</p>
+
+                 <h6 style="text-align: left;"> References: http://en.wikipedia.org/wiki/MapReduce</h6>
+                 <h6 style="text-align: left;">             http://research.google.com/archive/mapreduce.html</h6>
+
+                <h4> About Pig and PigLatin </h4>
+                <img src="images/step4-2.png" height="300px" width="300px" class="position: relative; float: right;" ></img>
+<p style="text-align: left;">Pig was initially developed at Yahoo! to allow people using Hadoop® to focus more on analyzing large data sets and spend less time having to write mapper and reducer programs. Like actual pigs, who eat almost anything, the Pig programming language is designed to handle any kind of data—hence the name!</p>
+<p style="text-align: left;">Pig is made up of two components: the first is the language itself, which is called PigLatin (yes, people naming various Hadoop projects do tend to have a sense of humor associated with their naming conventions), and the second is a runtime environment where PigLatin programs are executed. Think of the relationship between a Java Virtual Machine (JVM) and a Java application. In this section, we’ll just refer to the whole entity as Pig.</p>
+<h5 style="text-align: left;">The Programming Language</h5>
+<p style="text-align: left;">Let’s first look at the programming language itself so that you can see how it’s significantly easier than having to write mapper and reducer programs.</p>
+<p style="text-align: left;">The first step in a Pig program is to LOAD the data you want to manipulate from HDFS.</p>
+<p style="text-align: left;">Then you run the data through a set of transformations (which, under the covers, are translated into a set of mapper and reducer tasks)</p>
+<p style="text-align: left;">Finally, you DUMP the data to the screen or you STORE the results in a file somewhere.</p>
+<h4 style="text-align: left;">Pig vs SQL</h4>
+<p style="text-align: left;">uses lazy evaluation,</p>
+<p style="text-align: left;">is able to store data at any point during a pipeline,</p>
+<p style="text-align: left;">declares execution plans,</p>
+<p style="text-align: left;">supports pipeline splits.</p>
+<p style="text-align: left;">On the other hand, it has been argued DBMSs are substantially faster than the MapReduce system once the data is loaded, but that loading the data takes considerably longer in the database systems. It has also been argued RDBMSs offer out of the box support for column-storage, working with compressed data, indexes for efficient random data access, and transaction- level fault tolerance.</p>
+   
                   </div>
                 </div>
               </div>
@@ -210,7 +239,7 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
                         <div class="item active">
-                            <img class="featurette-image img-responsive" src="images/step4-1.png">
+                            <img class="featurette-image img-responsive" src="images/step4-2.png">
                             <div class="carousel-caption">
                                 <h3 style = "color:#333">Parallel Coordinates</h3>
                             </div>
@@ -235,6 +264,55 @@
             <div class="col-md-7">
                 <h2 class="featurette-heading">Step 4. <span class="text-muted">Visualisation</span></h2>
                 <p class="lead">Nothing tells a more compelling story than a pretty picture. Try these exploratory graphs that let you visually navigate complex datasets.</p>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row">
+            <h1>Who's using Big Data Analytics?</h1>
+            <br><br><br><br>
+            <div class="col-lg-4">
+                <img class="img-circle" src="images/Volume.jpg" width="170" height="170">
+                <h2><b>Facebook</b></h2>
+                <p>How do you store and query billions of records quickly and efficiently?</p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-circle" src="images/Velocity.png" width= "170" height= "170">
+                <h2><b>Twitter</b></h2>
+                <p>5 exabytes of data are generated every two days. Can your server choose the appropriate load balancing strategy?</p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-circle" src="images/Variety4.jpg" width = "170" height= "170">
+                <h2><b>Amazon</b></h2>
+                <p>Uses your buying patterns, and the buying patterns of people like you to come up with product suggestions.</p>
+            </div><!-- /.col-lg-4 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <img class="img-circle" src="images/Variety4.jpg" width = "170" height= "170">
+                <h2><b>Stream Processing</b></h2>
+                <p>Time, text, location... What database schema should you use?</p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-circle" src="images/Variety4.jpg" width = "170" height= "170">
+                <h2><b>Biomedical</b></h2>
+                <p>Genome sequencing, cure development, find chemcial compound, data mine research paper, stratefied medicine</p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-circle" src="images/Variety4.jpg" width = "170" height= "170">
+                <h2><b>Scientific Research</b></h2>
+                <p>CERN, Astronomy</p>
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+
+        <hr class="featurette-divider">
+
+        <div>
+            <h1 class="cover-heading">What Next?</h1>
+            <p>Visual Query Languages</p>
+            <div align="left">
+                <p style = "font-size: 20px; padding: 0px 90px 0px 170px;"><span class="text-muted">Visual query languages help data scientists formulate the right question and hence narrow down on the right data. The idea is to use pre-generated database statistics to build an exploratory graph that allows users to visually navigate complex datasets.</span></p>
             </div>
         </div>
 
@@ -287,63 +365,6 @@
                 <p><a class="btn btn-success" role="button" data-toggle="modal" data-target="#myModal">View Solutions »</a></p>
             </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
-
-        <hr class="featurette-divider" id="features">
-
-        <div>
-            <h1 style = "font-size: 50px; font-family: 'yay';" class="cover-heading">What can you do with Big Data?</h1>
-            <div align ="left">
-                <p style = "font-size: 20px; padding: 0px 90px 0px 170px;"><span class="text-muted">The main challenge of big data analytics is to find the right data to present. Because of the sheer volume and variety of the information available, it is very difficult to know where interesting data lie and how that data is related to other data sources. Visual query languages help data scientists formulate the right question and hence narrow down on the right data. The idea is to use pre-generated database statistics to build an exploratory graph that allows users to visually navigate complex datasets.</span></p>
-            </div>
-        </div>
-
-        <!-- START THE FEATURETTES -->
-
-        <hr class="featurette-divider" id="demo">
-
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">Declutter Information. <span class="text-muted">It'll blow your mind.</span></h2>
-                <p class="lead">The relative size of each node, together with its connections with other nodes, will serve as indicators of interesting segments within the datasets. As the user expands deeper into the each node, pig queries are composed on the fly and new visualisations are created in real time as results arrive.</p>
-            </div>
-            <div class="col-md-5">
-                <iframe width="500" height="500" src="http://jsfiddle.net/uPzTu/10/embedded/result,js,resources,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-            </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-5">
-                <iframe width="500" height="500" src="http://jsfiddle.net/9uk28/6/embedded/result,js,resources,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-            </div>
-            <div class="col-md-7">
-                <h2 class="featurette-heading">Size Viewer. <span class="text-muted">See for yourself.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-            </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">Parallel Coordinates. <span class="text-muted">Checkmate.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-            </div>
-            <div class="col-md-5">
-                <iframe width="500" height="500" src="http://jsfiddle.net/LG8ZV/2/embedded/result,js,resources,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-            </div>
-        </div>
-
-        <hr class="featurette-divider" id="conclusion">
-
-        <!-- /END THE FEATURETTES -->
-
-        <div>
-            <h1>Conclusion</h1>
-            <p>Developing a nervous system for the Earth.</p>
-            <p>Sign up.</p>
-        </div>
 
         <hr class="featurette-divider">
 
