@@ -67,12 +67,12 @@
             </div>
         </div>
     </div>
+   
 
     <div class="container marketing" id="about">
-
+        
         <br><br><br>
-
-        <div class="row featurette">
+        <div class="row featurette" >
             <div class="col-md-7">
                 <h2 class="featurette-heading">Step 1. <span class="text-muted">Data Collection</span></h2>
                 <p class="lead">Data can be collected from the internet by web crawlers. This data is returned to companies local warehouses for analysis which is beneficial to their expansion. Some stats on the explosion of data are given on the right.</p>
@@ -117,7 +117,6 @@
                 </div>
             </div>
         </div>
-
         <hr class="featurette-divider">
 
         <div class="row featurette">
@@ -134,9 +133,20 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="sumiModalLabel">Map Reduce and Pig Latin</h4>
+                    <p class="modal-title" id="sumiModalLabel">
+                        <span class="text-muted">STORAGE</span></p>
                     <div class="modal-body">
-                        <p>write some shit here please</p>
+                        <h3>Some examples of the way Big data is stored.</h3>
+                        <br>
+                        <h4 style = "color:#C94A00">Object-Based Storage</h4>
+                        <p style = "font-size:18px; color:#211f1f; line-height:1.231;">Object based storage works with a flat architecture where data is stored in buckets. The objects are not organised in a hierarchy like files. They exist at the same level in a flat address space called a storage pool and have their own identifiers. This makes it faster and easier to retrieve data rather than having to delve into deep files structures. Object based storage makes use of metadata.</p>
+                        <img src = "images/Object1.png" height="350px" weight="350px" style="float:right">
+                        <p style ="font-size:18px; color:#211f1f; line-height:1.231;">Metadata is a basic piece of information about data that make it easy to find and work with particular attributes of data. Object based storage helps to connect the dots and show relationships between metadata rather than the contents itself. For example it's not as important to know which people visited a particular website as the number of people who came there after a certain article was posted.</p>
+                        <br><br>
+                        <h4 style = "color:#C94A00">Scale-out NAS</h4>
+                        <p style="font-size:18px; color:#211f1f; line-height:1.321;">The main reason companies with huge data use Scale-out NAS is because of their potentially limitless expansion while still being managed as a single storage. It is a dedicated hard disk storage device and provides a file based storage system. It is a system that can run simultaneously with different NAS nodes. It makes a copy of the data as backup in the background and has fault tolerance. This means that if one or more nodes fail to work, it will not affect the system without any data loss. Advantages of scale out NAS - cost containment.</p>
+
+
                     </div>
                   </div>
                 </div>
