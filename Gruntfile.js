@@ -301,11 +301,21 @@ module.exports = function (grunt) {
                     cwd: '<%= yeoman.app %>',
                     dest: '<%= yeoman.dist %>',
                     src: [
-                        '*.{ico,png,txt,json}',
+                        '*.{ico,png,txt,json,ogg}',
                         '.htaccess',
                         'images/{,*/}*.webp',
                         '{,*/}*.html',
-                        'styles/fonts/{,*/}*.*'
+                        'styles/fonts/{,*/}*.*',
+                        'bower_components/bootstrap/fonts/*.*'
+                    ]
+                }, {
+                    mode: 664,
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= yeoman.app %>/bower_components/bootstrap/',
+                    dest: '<%= yeoman.dist %>',
+                    src: [
+                        'fonts/*.*'
                     ]
                 }]
             },
