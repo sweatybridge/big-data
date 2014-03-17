@@ -18,12 +18,11 @@
 
 /* case study */
 .cases {
-  margin: 80px 0px;
   background-color: #f39c12;
   color: white;
 }
 
-.steps {
+.section {
   padding: 80px 0px;
 }
 
@@ -198,10 +197,13 @@ nav#primary h1 {
  */
 
 /* Links */
-a,
+/*a,
 a:focus,
 a:hover {
   color: #000;
+}*/
+.lwhite {
+  color: white;
 }
 
 /* Custom default button */
@@ -319,8 +321,9 @@ body {
  */
 
 .mastfoot {
+  padding: 40px 0px;
   background-color: #2f2f2f;
-  line-height: 120px;
+  color: white;
   width: 100%;
 }
 
