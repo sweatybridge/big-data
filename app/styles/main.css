@@ -12,9 +12,6 @@
 .bblack.active {
   background-color: black !important;
 }
-.black {
-  color: black;
-}
 
 /* case study */
 .cases {
@@ -197,13 +194,16 @@ nav#primary h1 {
  */
 
 /* Links */
-/*a,
-a:focus,
-a:hover {
-  color: #000;
-}*/
-.lwhite {
+.lwhite,
+.lwhite:focus,
+.lwhite:hover {
   color: white;
+}
+
+.lblack,
+.lblack:focus,
+.lblack:hover {
+  color: black;
 }
 
 /* Custom default button */
