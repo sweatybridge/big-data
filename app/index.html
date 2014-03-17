@@ -6,8 +6,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>awujo</title>
-    <meta name="description" content="">
+    <title>Big Data Analytics</title>
+    <meta name="description" content="Imperial College Computing First Year Project - Topics (Big Data)">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
@@ -32,19 +32,19 @@
                 <a class="home" href="#home">View</a>
             </li>
             <li>
-                <h1>About</h1>
+                <h1>Process</h1>
                 <a class="about" href="#about">View</a>
             </li>
             <li>
-                <h1>Features</h1>
+                <h1>Benefits</h1>
                 <a class="features" href="#features">View</a>
             </li>
             <li>
-                <h1>Demo</h1>
+                <h1>Future</h1>
                 <a class="demo" href="#demo">View</a>
             </li>
             <li>
-                <h1>Conclusion</h1>
+                <h1>Team</h1>
                 <a class="conclusion" href="#conclusion">View</a>
             </li>
         </ul>
@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    <div class="container marketing steps" id="about">
+    <div class="container marketing section" id="about">
 
         <div class="row featurette" >
             <div class="col-md-7">
@@ -229,19 +229,19 @@
                         <div class="item active">
                             <img class="featurette-image img-responsive" src="images/step4-2.png">
                             <div class="carousel-caption">
-                                <a target="_blank" href="http://exposedata.com/parallel/"><h3 class="black">Parallel Coordinates</h3></a>
+                                <a class="lblack" target="_blank" href="http://exposedata.com/parallel/"><h3>Parallel Coordinates</h3></a>
                             </div>
                         </div>
                         <div class="item">
                             <img class="featurette-image img-responsive" src="images/step4-2.png">
                             <div class="carousel-caption">
-                                <a target="_blank" href="http://bost.ocks.org/mike/miserables/"><h3 class="black">Heat Map</h3></a>
+                                <a class="lblack" target="_blank" href="http://bost.ocks.org/mike/miserables/"><h3>Heat Map</h3></a>
                             </div>
                         </div>
                         <div class="item">
                             <img class="featurette-image img-responsive" src="images/step4-3.png">
                             <div class="carousel-caption">
-                                <a target="_blank" href="http://mbostock.github.io/d3/talk/20111116/force-collapsible.html"><h3 class="black">Force Directed Graph</h3></a>
+                                <a class="lblack" target="_blank" href="http://mbostock.github.io/d3/talk/20111116/force-collapsible.html"><h3>Force Directed Graph</h3></a>
                             </div>
                         </div>
                     </div>
@@ -249,7 +249,31 @@
             </div>
             <div class="col-md-7">
                 <h2 class="featurette-heading">Step 4. <span class="text-muted">Visualisation</span></h2>
-                <p class="lead">Nothing tells a more compelling story than a pretty picture. Try these exploratory graphs that let you visually navigate complex datasets.</p>
+                <p class="lead">Nothing tells a more compelling story than a pretty picture. Try these exploratory graphs that let you visually navigate complex datasets. <a data-toggle="modal" data-target="#visModal" href="#">more</a></p>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="visModal" tabindex="-1" role="dialog" aria-labelledby="visModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <p class="modal-title" id="visModalLabel">
+                        <span class="text-muted">STORAGE</span></p>
+                    <div class="modal-body">
+                        <h3>Some examples of the way Big data is stored.</h3>
+                        <br>
+                        <h4 style="color:#C94A00">Object-Based Storage</h4>
+                        <p style="font-size:18px; color:#211f1f; line-height:1.231;">Object based storage works with a flat architecture where data is stored in buckets. The objects are not organised in a hierarchy like files. They exist at the same level in a flat address space called a storage pool and have their own identifiers. This makes it faster and easier to retrieve data rather than having to delve into deep files structures. Object based storage makes use of metadata.</p>
+                        <img src="images/Object1.png" height="350px" weight="350px" style="float:right;"></img>
+                        <p style="font-size:18px; color:#211f1f; line-height:1.231;">Metadata is a basic piece of information about data that make it easy to find and work with particular attributes of data. Object based storage helps to connect the dots and show relationships between metadata rather than the contents itself. For example it's not as important to know which people visited a particular website as the number of people who came there after a certain article was posted.</p>
+                        <br><br>
+                        <h4 style="color:#C94A00">Scale-out NAS</h4>
+                        <p style="font-size:18px; color:#211f1f; line-height:1.321;">The main reason companies with huge data use Scale-out NAS is because of their potentially limitless expansion while still being managed as a single storage. It is a dedicated hard disk storage device and provides a file based storage system. It is a system that can run simultaneously with different NAS nodes. It makes a copy of the data as backup in the background and has fault tolerance. This means that if one or more nodes fail to work, it will not affect the system without any data loss. Advantages of scale out NAS - cost containment.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
 
@@ -324,11 +348,11 @@
 
     </div>
 
-    <div id="features" class="cases font-thin">
+    <div id="features" class="cases section font-thin">
         <div class="container marketing">
             <div class="row">
 
-                <h2 class="featurette-heading">Who Benefits from Big Data Analytics?</h2>
+                <h2 class="cover-heading font-thin">Who Benefits from Big Data Analytics?</h2>
                 <hr class="featurette-divider">
 
                 <div class="col-lg-4">
@@ -337,29 +361,29 @@
                     <p class="font-thin">Graph Search returns search results based on big data from your friends, likes and subscriptions. <a target="_blank" href="http://www.forbes.com/sites/gregsatell/2013/02/04/why-facebooks-graph-search-really-does-matter-big-data-nlp/" class="label label-info">5</a></p>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
-                    <img class="img-circle" src="images/twitter.png" width= "170" height= "170">
+                    <img class="img-circle" src="images/twitter.png" width="170" height="170">
                     <h2><b>Twitter</b></h2>
                     <p>Timeline suggests ads, people to follow, from your tweets and frequent trends in the tweets of those you follow. <a target="_blank" href="http://support.twitter.com/articles/20170137-about-twitter-s-suggestions-for-people-you-may-know#" class="label label-info">6</a></p>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
-                    <img class="img-circle" src="images/amazon1.jpg" width = "170" height= "170">
+                    <img class="img-circle" src="images/amazon1.jpg" width="170" height="170">
                     <h2><b>Amazon</b></h2>
                     <p>Uses your buying patterns, and the buying patterns of people like you to come up with product suggestions. <a target="_blank" href="http://smartdatacollective.com/bernardmarr/182796/amazon-using-big-data-analytics-read-your-mind" class="label label-info">4</a></p>
                 </div><!-- /.col-lg-4 -->
             </div>
             <div class="row">
                 <div class="col-lg-4">
-                    <img class="img-circle" src="images/Variety4.jpg" width = "170" height= "170">
+                    <img class="img-circle" src="images/Variety4.jpg" width="170" height="170">
                     <h2><b>Stream Processing</b></h2>
                     <p>Analyze data as it is being produced. No need for storage, latency is key. <a target="_blank" href="http://scaledb.com/high-velocity-data.php" class="label label-info">3</a></p>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
-                    <img class="img-circle" src="images/DNA.png" width = "170" height= "170">
+                    <img class="img-circle" src="images/DNA.png" width="170" height="170">
                     <h2><b>Biomedical</b></h2>
                     <p>Detailed maps of human genetic variations can be built by analysis of large databases of genomic data public available. <a target="_blank" href="http://www.forbes.com/sites/sap/2012/04/16/how-cloud-and-big-data-are-impacting-the-human-genome-touching-7-billion-lives/2/" class="label label-info">2</a></p>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
-                    <img class="img-circle" src="images/cern1.png" width = "170" height= "170">
+                    <img class="img-circle" src="images/cern1.png" width="170" height="170">
                     <h2><b>Scientific Research</b></h2>
                     <p>Analysis of results of various experimental results has led to important discoveries at CERN. <a target="_blank" href="http://gigaom.com/2013/09/18/attacking-cerns-big-data-problem/" class="label label-info">1</a></p>
                 </div><!-- /.col-lg-4 -->
@@ -367,22 +391,50 @@
         </div>
     </div>
 
-    <div id="demo">
+    <div id="demo" class="section">
+        <div class="container marketing">
+            <h2 class="cover-heading font-thin">Embrace The Future</h2>
+            <hr class="featurette-divider">
 
-        <h2 class="featurette-heading">What Next?</h2>
-        <hr class="featurette-divider">
-
-        <iframe width="560" height="315" src="//www.youtube.com/embed/fc1zBNC9wNY" frameborder="0" allowfullscreen></iframe>
-
-        <p>Visual Query Languages</p>
+            <iframe width="560" height="315" src="//www.youtube.com/embed/fc1zBNC9wNY" frameborder="0" allowfullscreen></iframe>
+        </div>
     </div>
 
     <!-- FOOTER -->
     <footer id="conclusion">
-        <div class="mastfoot">
+        <div class="mastfoot section">
             <div class="container marketing">
-                <p class="pull-right" style="margin: 0px;"><a style="color: white;" href="#home"><span class="glyphicon glyphicon-chevron-up"></span> Back to top</a></p>
-                <p class="pull-left text-muted" style="margin: 0px;">© 2014 Topics Group 13 · <a style="color: white;" data-toggle="modal" data-target="#refModal" href="#">References</a></p>
+
+                <h2 class="cover-heading font-thin">Our Superheroic Team</h2>
+                <hr class="featurette-divider">
+
+                <div class="row font-thin">
+                    <div class="col-lg-3">
+                        <img class="img-circle" src="images/cern1.png" width="150" height="150">
+                        <h3 class="font-semibold">Tola</h3>
+                        <p>Text Guy</p>
+                    </div>
+                    <div class="col-lg-3">
+                        <img class="img-circle" src="images/cern1.png" width="150" height="150">
+                        <h3 class="font-semibold">Sumi</h3>
+                        <p>Photo Girl</p>
+                    </div>
+                    <div class="col-lg-3">
+                        <img class="img-circle" src="images/cern1.png" width="150" height="150">
+                        <h3 class="font-semibold">Jiaqi</h3>
+                        <p>UX Manager</p>
+                    </div>
+                    <div class="col-lg-3">
+                        <img class="img-circle" src="images/hq.jpg" width="150" height="150">
+                        <h3 class="font-semibold">Han Qiao</h3>
+                        <p>Visionary Leader</p>
+                    </div>
+                </div>
+
+                <br><br><br><br><br><br>
+
+                <p class="pull-right"><a class="lwhite" href="#home"><span class="glyphicon glyphicon-chevron-up"></span> Back to top</a></p>
+                <p class="pull-left text-muted">© 2014 Topics Group 13 · <a class="lwhite" data-toggle="modal" data-target="#refModal" href="#">References</a></p>
             </div>
         </div>
 
@@ -413,7 +465,7 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <!-- Google Analytics -->
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -426,7 +478,6 @@
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
-    <script src="scripts/firework.js"></script>
     <!-- endbuild -->
 </body>
 </html>
