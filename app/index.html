@@ -176,30 +176,28 @@
                     <h4 class="modal-title" id="pigModalLabel">Map Reduce and Pig Latin</h4>
                   </div>
                   <div class="modal-body">
-                    <h4>MapReduce</h4>
+                  <h4 style="color:#2E8B57">Map Reduce</h4>
                     <p>MapReduce is a programming model and an associated implementation for processing and generating large data sets. Users specify a map function that processes a key/value pair to generate a set of intermediate key/value pairs, and a reduce function that merges all intermediate values associated with the same intermediate key. Many real world tasks are expressible in this model.</p>
-                    <p>Programs written in this functional style are automatically parallelized and executed on a large cluster of commodity machines. The run-time system takes care of the details of partitioning the input data, scheduling the program's execution across a set of machines, handling machine failures, and managing the required inter-machine communication. This allows programmers without any experience with parallel and distributed systems to easily utilize the resources of a large distributed system.</p>
+
+                    <p>Programs written in this functional style are automatically parallelized and executed on a large cluster of commodity machines. The run-time system takes care of the details of partitioning the input data,  handling machine failures. This allows programmers without any experience with parallel and distributed systems to easily utilize the resources of a large distributed system.</p>
+                     <img src="images/keep-calm-and-map-reduce-9.png" height="300px" width="300px" style="float: right;"></img>
                     <p>"Map" step: The master node takes the input, divides it into smaller sub-problems, and distributes them to worker nodes. A worker node may do this again in turn, leading to a multi-level tree structure. The worker node processes the smaller problem, and passes the answer back to its master node.</p>
                     <p>"Reduce" step: The master node then collects the answers to all the sub-problems and combines them in some way to form the output – the answer to the problem it was originally trying to solve.</p>
-                    <h4>Uses</h4>
+                    <h4 style="color:#2E8B57">Uses</h4>
                     <p>MapReduce is useful in a wide range of applications. For example, at Google, MapReduce was used to completely regenerate Google's index of the World Wide Web. It replaced the old ad hoc programs that updated the index and ran the various analyses.</p>
-                    <h4>Criticism</h4>
-                    <h5>Restricted programming framework</h5>
-                    <p>MapReduce tasks must be written as acyclic dataflow programs, i.e. a stateless mapper followed by a stateless reducer, that are executed by a batch job scheduler. This paradigm makes repeated querying of datasets difficult and imposes limitations that are felt in fields such as machine learning, where iterative algorithms that revisit a single working setmultiple times are the norm.[1][2]</p>
-                    <h4> About Pig and PigLatin </h4>
-                    <img src="images/step4-2.png" height="300px" width="300px" style="float: left;"></img>
+                    <h4 style="color:#2E8B57">Criticism</h4>
+                    <p>MapReduce tasks must be written as acyclic dataflow programs, i.e. a stateless mapper followed by a stateless reducer, that are executed by a batch job scheduler.</p>
+                    <h4 style="color:#6A5ACD"> About Pig and PigLatin </h4>
                     <p>Pig was initially developed at Yahoo! to allow people using Hadoop® to focus more on analyzing large data sets and spend less time having to write mapper and reducer programs. Like actual pigs, who eat almost anything, the Pig programming language is designed to handle any kind of data—hence the name!</p>
-                    <p>Pig is made up of two components: the first is the language itself, which is called PigLatin (yes, people naming various Hadoop projects do tend to have a sense of humor associated with their naming conventions), and the second is a runtime environment where PigLatin programs are executed. Think of the relationship between a Java Virtual Machine (JVM) and a Java application. In this section, we’ll just refer to the whole entity as Pig.</p>
-                    <h5>The Programming Language</h5>
+                    <p>Pig is made up of two components: the first is the language itself, which is called PigLatin, and the second is a runtime environment where PigLatin programs are executed, like JVM and a Java application. Here, we’ll just refer to the whole entity as Pig.</p>
+                    <h4 style="color:#6A5ACD">The Programming Language</h4>
                     <p>Let’s first look at the programming language itself so that you can see how it’s significantly easier than having to write mapper and reducer programs.</p>
                     <p>The first step in a Pig program is to LOAD the data you want to manipulate from HDFS.</p>
                     <p>Then you run the data through a set of transformations (which, under the covers, are translated into a set of mapper and reducer tasks)</p>
                     <p>Finally, you DUMP the data to the screen or you STORE the results in a file somewhere.</p>
-                    <h4>Pig vs SQL</h4>
+                    <h4 style="color:#6A5ACD">Pig vs SQL</h4>
                     <p>uses lazy evaluation,</p>
-                    <p>is able to store data at any point during a pipeline,</p>
                     <p>declares execution plans,</p>
-                    <p>supports pipeline splits.</p>
                     <p>On the other hand, it has been argued DBMSs are substantially faster than the MapReduce system once the data is loaded, but that loading the data takes considerably longer in the database systems. It has also been argued RDBMSs offer out of the box support for column-storage, working with compressed data, indexes for efficient random data access, and transaction- level fault tolerance.</p>
                   </div>
                 </div>
@@ -361,8 +359,8 @@
                         <p>Photo Girl</p>
                     </div>
                     <div class="col-lg-3">
-                        <img class="img-circle" src="images/cern1.png" width="150" height="150">
-                        <h3 class="font-semibold">Jiaqi</h3>
+                        <img class="img-circle" src="images/mmexport1394545567086.jpg" width="150" height="150">
+                        <h3 class="font-semibold">Jiaqi Chen</h3>
                         <p>UX Manager</p>
                     </div>
                     <div class="col-lg-3">
