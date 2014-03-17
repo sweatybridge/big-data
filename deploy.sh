@@ -4,7 +4,7 @@
 # replace with your username
 UN=qh812
 
-WEB=dist
+WEB=${1:-dist}
 PROJ=/vol/project/2013/163/g1316313
 HN=svnuser.doc.ic.ac.uk
 
