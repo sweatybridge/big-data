@@ -23,6 +23,10 @@
   padding: 80px 0px;
 }
 
+.subtitle {
+  font-size: 18px;
+}
+
 /* fonts */
 .font-thin {
   font-family: "Titillium Web", sans-serif;
@@ -43,10 +47,14 @@
 /* modal */
 .modal-title {
   color: black;
+  text-transform: uppercase;
 }
 .modal-body {
   color: black;
   text-align: left;
+  font-size: 18px;
+  color: #211f1f;
+  line-height: 1.231;
 }
 
 iframe, object, embed {
