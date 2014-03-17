@@ -5,6 +5,17 @@
     padding: 0.2em 0;
 }
 
+/* special carousel control */
+.bblack {
+  border-color: black !important;
+}
+.bblack.active {
+  background-color: black !important;
+}
+.black {
+  color: black;
+}
+
 /* case study */
 .cases {
   margin: 80px 0px;
