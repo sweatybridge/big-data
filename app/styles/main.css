@@ -5,6 +5,38 @@
     padding: 0.2em 0;
 }
 
+/* special carousel control */
+.bblack {
+  border-color: black !important;
+}
+.bblack.active {
+  background-color: black !important;
+}
+.black {
+  color: black;
+}
+
+/* case study */
+.cases {
+  margin: 80px 0px;
+  background-color: #f39c12;
+  color: white;
+}
+
+.steps {
+  padding: 80px 0px;
+}
+
+/* fonts */
+.font-thin {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 200;
+}
+.font-semibold {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+}
+
 /* datamaps styles */
 #map {
     position: absolute;
@@ -196,20 +228,23 @@ body {
   color: #333;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,0);
-  box-shadow: inset 0 0 100px rgba(0,0,0,0);
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
+  color: white;
+  background-color: #34495e;
   display: table;
   width: 100%;
   height: 100%; /* For at least Firefox */
   min-height: 100%;
+  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
 .site-wrapper-inner {
-  position: relative;
-  display: table-cell;
-  vertical-align: top;
+  position: absolute;
+  text-align: left;
+  left: 60px;
+  bottom: 40px;
 }
 .cover-container {
   margin-left: auto;
@@ -270,7 +305,6 @@ body {
 /*
  * Cover
  */
-
 .cover {
   padding: 0 20px;
 }
@@ -285,6 +319,8 @@ body {
  */
 
 .mastfoot {
+  background-color: #2f2f2f;
+  line-height: 120px;
   width: 100%;
 }
 
@@ -347,9 +383,9 @@ body {
     top: 0;
   }
   /* Start the vertical centering */
-  .site-wrapper-inner {
+  /*.site-wrapper-inner {
     vertical-align: middle;
-  }
+  }*/
   /* Handle the widths */
   .masthead,
   .cover-container {
@@ -360,7 +396,8 @@ body {
     padding-left: 0;
     padding-right: 0;
   }
-  .featurette-heading {
+  .featurette-heading,
+  .cover-heading {
     font-size: 50px;
   }
 }
