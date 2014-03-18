@@ -1,46 +1,46 @@
 Setup Guide
 ===
 1. install [home brew](http://brew.sh)
-```sh
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-```
+
+        ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+
 2. install [nodejs](http://nodejs.org)
-```sh
-brew install node
-```
+
+        brew install node
+
 3. install [yeoman](http://yeoman.io/)
-```sh
-npm install -g yo
-```
+
+        npm install -g yo
+
 4. install [compass](http://compass-style.org/)
-```sh
-sudo gem install sass compass
-```
+
+        sudo gem install sass compass
+
 5. clone this repo
-```sh
-git clone https://gitlab.doc.ic.ac.uk/lab1314_spring/topics_13.git
-```
+
+        git clone https://gitlab.doc.ic.ac.uk/lab1314_spring/topics_13.git
+
 6. change to your `topics_13` directory
-```sh
-cd topics_13
-```
+
+		cd topics_13
+
 7. install project dependencies
-```sh
-npm install
-bower install
-```
+
+        npm install
+        bower install
+
 8. run the development server locally
-```sh
-grunt serve
-```
+
+		grunt serve
 
 Deployment
 ===
 1. Compile the website source code
-```sh
-grunt
-```
+
+        grunt
+
 2. Upload `dist` folder to `project directory`
+
 ```sh
 # assuming you have changed UN to your own username and
 # setup ssh key authentication with DoC's computer
