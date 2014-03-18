@@ -1,47 +1,51 @@
 Setup Guide
 ===
 1. install [home brew](http://brew.sh)
-
-        ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-
+```sh
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+```
 2. install [nodejs](http://nodejs.org)
-
-        brew install node
-
+```sh
+brew install node
+```
 3. install [yeoman](http://yeoman.io/)
-
-        npm install -g yo
-
+```sh
+npm install -g yo
+```
 4. install [compass](http://compass-style.org/)
-
-        sudo gem install sass compass
-
+```sh
+sudo gem install sass compass
+```
 5. clone this repo
-
-        git clone https://gitlab.doc.ic.ac.uk/lab1314_spring/topics_13.git
-
+```sh
+git clone https://gitlab.doc.ic.ac.uk/lab1314_spring/topics_13.git
+```
 6. change to your `topics_13` directory
-
-		cd topics_13
-
+```sh
+cd topics_13
+```
 7. install project dependencies
-
-        npm install
-        bower install
-
+```sh
+npm install
+bower install
+```
 8. run the development server locally
-
-		grunt serve
+```sh
+grunt serve
+```
 
 Deployment
 ===
 1. Compile the website source code
-
-        grunt -f
-
-2. Upload `dist` folder to `project directory` (assuming you have changed UN to your own username and setup ssh key authentication with DoC's computer)
-
-    sh deploy.sh
+```sh
+grunt
+```
+2. Upload `dist` folder to `project directory`
+```sh
+# assuming you have changed UN to your own username and
+# setup ssh key authentication with DoC's computer
+sh deploy.sh
+```
 
 Project Directory
 ===
