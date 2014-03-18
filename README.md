@@ -41,11 +41,10 @@ Deployment
 
 2. Upload `dist` folder to `project directory`
 
-        ```sh
         # assuming you have changed UN to your own username and
         # setup ssh key authentication with DoC's computer
+        
         sh deploy.sh
-        ```
 
 Project Directory
 ===
