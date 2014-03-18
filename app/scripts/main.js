@@ -85,7 +85,10 @@ $(document).ready(function() {
 
     // attach pig audio control
     $('#pigControl').click(function() {
-        $('#pigAudio')[0].play();
+        var sound = $('#pigAudio')[0];
+        sound.pause();
+        sound.currentTime = 0;
+        sound.play();
         return false;
     });
 });
