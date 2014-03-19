@@ -164,7 +164,6 @@ function animLoop() {
 }
 
 function highlight() {
-    console.log('highlight');
     // var ps = d3.selectAll('.datamaps-subunit')[0];
     var i = Math.floor(Math.random() * wbc.length);
     var c = wbc[i];
