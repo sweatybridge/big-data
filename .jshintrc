@@ -20,6 +20,7 @@
     "jquery": true,
     "globals": {
         "d3": true,
-        "Datamap": true
+        "Datamap": true,
+        "ga": true
     }
 }

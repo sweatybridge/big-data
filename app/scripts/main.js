@@ -1,95 +1,56 @@
 'use strict';
 
 // data maps
-var map, canvas, ctx, cw, ch, hue, wbc;
+var map, canvas, ctx, cw, ch, hue, wbc, hash;
 var fireworks = [];
 
 // Scroll the background layers
-function parallaxScroll(){
+function parallaxScroll() {
     var scrolled = $(window).scrollTop();
     $('#parallax-bg1').css('top',(0-(scrolled*0.25))+'px');
     $('#parallax-bg2').css('top',(0-(scrolled*0.5))+'px');
     $('#parallax-bg3').css('top',(0-(scrolled*0.75))+'px');
 }
 
-// Set navigation dots to an active state as the user scrolls 
-function redrawDotNav(){
-    var half = $(window).height() / 2;
-    var section1Top =  0;
-    // The top of each section is offset by half the distance to the previous section.
-    var section2Top =  $('#about').offset().top - half;
-    var section3Top =  $('#features').offset().top - half;
-    var section4Top =  $('#demo').offset().top - half;
-    var section5Top =  $('#conclusion').offset().top - half;
-    $('nav#primary a').removeClass('active');
-    if($(document).scrollTop() >= section1Top && $(document).scrollTop() < section2Top){
-        $('nav#primary a.home').addClass('active');
-    } else if ($(document).scrollTop() >= section2Top && $(document).scrollTop() < section3Top){
-        $('nav#primary a.about').addClass('active');
-    } else if ($(document).scrollTop() >= section3Top && $(document).scrollTop() < section4Top){
-        $('nav#primary a.features').addClass('active');
-    } else if ($(document).scrollTop() >= section4Top && $(document).scrollTop() < section5Top){
-        $('nav#primary a.demo').addClass('active');
-    } else if ($(document).scrollTop() >= section5Top){
-        $('nav#primary a.conclusion').addClass('active');
+function updateHash() {
+    var cn = $('nav#primary a.active').attr('class').split(' ')[0];
+    if (hash !== cn) {
+        var pos = $(document).scrollTop();
+        location.hash = cn;
+        $(document).scrollTop(pos);
+        hash = cn;
+        ga('send', 'pageview', '/#'+cn);
     }
 }
 
-$(document).ready(function() {
-    // initialise variables
-    map = new Datamap({
-        element: $('#map')[0],
-        fills: {
-            defaultFill: 'rgba(232, 172, 137, 0.8)',
-        },
-        geographyConfig: {
-            borderColor: 'rgba(100, 100, 100, 0.6)',
-            highlightFillColor: 'rgba(246, 157, 30, 0.5)',
-            highlightBorderColor: 'rgba(100, 100, 100, 0.8)',
-            popupOnHover: false
+// Set navigation dots to an active state as the user scrolls 
+function redrawDotNav() {
+
+    var half = $(window).height() / 2;
+    var top = $(document).scrollTop();
+    var navs = $('nav#primary a');
+
+    navs.removeClass('active');
+
+    navs.each(function(i, v) {
+        var cn = $(v).attr('class');
+        var c = '#' + cn;
+        var current = $(c).offset().top;
+        var next = navs[i+1];
+
+        if (next) {
+            var n = '#' + $(next).attr('class');
+            var bottom = $(n).offset().top;
+            if (top >= current - half && top < bottom - half) {
+                $(v).addClass('active');
+            }
+        } else {
+            if (top >= current - half) {
+                $(v).addClass('active');
+            }
         }
     });
-    canvas = $('#canvas')[0];
-    ctx = canvas.getContext('2d');
-    // full screen dimensions
-    cw = $(window).width();
-    ch = $(window).height();
-    hue = 120;
-
-    canvas.width = cw;
-    canvas.height = ch;
-
-    redrawDotNav();
-    // Scroll event handler 
-    $(window).bind('scroll', function() {
-        parallaxScroll();
-        redrawDotNav();
-    });
-
-    // Show/hide dot lav labels on hover
-    $('nav#primary a').hover(function() {
-        $(this).prev('h1').show();
-    }, function() {
-        $(this).prev('h1').hide();
-    });
-
-    // smooth scrolling
-    $('a:not(.carousel-control, #pigControl)').click(function() {
-        $('html, body').animate({
-            scrollTop: $( $.attr(this, 'href') ).offset().top
-        }, 500, function() {
-            parallaxScroll(); // Callback is required for iOS
-        });
-        return false;
-    });
-
-    // attach pig audio control
-    $('#pigControl').click(function() {
-        $('#pigAudio')[0].play();
-        $('#pigModal').modal('toggle');
-        return false;
-    });
-});
+}
 
 // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
 // not supported in all browsers though and sometimes needs a prefix, so we need a shim
@@ -220,7 +181,6 @@ function animLoop() {
 }
 
 function highlight() {
-    console.log('highlight');
     // var ps = d3.selectAll('.datamaps-subunit')[0];
     var i = Math.floor(Math.random() * wbc.length);
     var c = wbc[i];
@@ -254,8 +214,76 @@ function wbcloop() {
     }, rand);
 }
 
-$.getJSON('wbc.json', function (json) {
-    wbc = json;
-    wbcloop();
-    animLoop();
+$(document).ready(function() {
+    // initialise variables
+    map = new Datamap({
+        element: $('#map')[0],
+        fills: {
+            defaultFill: 'rgba(232, 172, 137, 0.8)',
+        },
+        geographyConfig: {
+            borderColor: 'rgba(100, 100, 100, 0.6)',
+            highlightFillColor: 'rgba(246, 157, 30, 0.5)',
+            highlightBorderColor: 'rgba(100, 100, 100, 0.8)',
+            popupOnHover: false
+        }
+    });
+    canvas = $('#canvas')[0];
+    ctx = canvas.getContext('2d');
+    hue = 120;
+
+    // full screen dimensions
+    cw = $(window).width();
+    ch = $(window).height();
+
+    canvas.width = cw;
+    canvas.height = ch;
+
+    $(window).resize(function() {
+        // redraw datamap
+        // redraw canvas
+    });
+
+    redrawDotNav();
+    // Scroll event handler 
+    $(window).bind('scroll', function() {
+        parallaxScroll();
+        redrawDotNav();
+        clearTimeout($.data(this, 'scrollTimer'));
+        $.data(this, 'scrollTimer', setTimeout(function() {
+            updateHash();
+        }, 400));
+    });
+
+    // Show/hide dot lav labels on hover
+    $('nav#primary a').hover(function() {
+        $(this).prev('h1').show();
+    }, function() {
+        $(this).prev('h1').hide();
+    });
+
+    // smooth scrolling
+    $('a:not(.carousel-control, #pigControl)').click(function() {
+        $('html, body').animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top
+        }, 500, function() {
+            parallaxScroll(); // Callback is required for iOS
+        });
+        return false;
+    });
+
+    // attach pig audio control
+    $('#pigControl').click(function() {
+        var sound = $('#pigAudio')[0];
+        sound.pause();
+        sound.currentTime = 0;
+        sound.play();
+        return false;
+    });
+
+    $.getJSON('wbc.json', function (json) {
+        wbc = json;
+        wbcloop();
+        animLoop();
+    });
 });

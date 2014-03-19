@@ -37,11 +37,14 @@ Deployment
 ===
 1. Compile the website source code
 
-        grunt -f
+        grunt
 
-2. Upload `dist` folder to `project directory` (assuming you have changed UN to your own username and setup ssh key authentication with DoC's computer)
+2. Upload `dist` folder to `project directory`
 
-    sh deploy.sh
+        # assuming you have changed UN to your own username and
+        # setup ssh key authentication with DoC's computer
+        
+        sh deploy.sh
 
 Project Directory
 ===
