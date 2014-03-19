@@ -19,6 +19,7 @@ function updateHash() {
         location.hash = cn;
         $(document).scrollTop(pos);
         hash = cn;
+        ga('send', 'pageview', '/#'+cn);
     }
 }
 

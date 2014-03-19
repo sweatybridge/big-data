@@ -1,6 +1,7 @@
 'use strict';
 
 $(document).ready(function() {
+	// event tracking
 	$('#pigControl').click(function() {
 		ga('send', 'event', 'button', 'click', 'Pig Sound');
 	});
