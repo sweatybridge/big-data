@@ -91,6 +91,12 @@ $(document).ready(function() {
         sound.play();
         return false;
     });
+
+    $.getJSON('wbc.json', function (json) {
+        wbc = json;
+        wbcloop();
+        animLoop();
+    });
 });
 
 // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
@@ -255,9 +261,3 @@ function wbcloop() {
         wbcloop();
     }, rand);
 }
-
-$.getJSON('wbc.json', function (json) {
-    wbc = json;
-    wbcloop();
-    animLoop();
-});
